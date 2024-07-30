@@ -1,0 +1,151 @@
+/* Folha de Estilo */
+
+/*
+seletor{
+    propriedade: valor;
+}
+*/
+
+body{
+    margin: 0; /*retirando a margem padrão do body*/
+    font-family: "Roboto", sans-serif;
+}
+
+h1{
+    color: #003366;
+    margin: 0;
+    font-weight: 700; /*peso da fonte (negrito)*/
+    font-size: 64px;
+}
+
+h2{
+    margin: 0;
+    font-size: 32px;
+    color: #333333;
+}
+
+p{
+    font-size: 20px;
+    color: #666666;
+}
+
+.container{
+    display: flex;
+    align-items: center; /*alinhamento vertical*/
+}
+
+.nav{
+    background-color: #003366;
+    /*width: 280px;*/
+    height: 100vh; /*view height -> Unidade de medida em relação ao navegador*/
+    text-align: center;
+
+    padding-left: 70px;
+    padding-right: 70px;
+
+    display: flex;
+    align-items: center;
+}
+
+.content-nav a{
+    text-decoration: none; /*retira o sublinhado*/
+    color: #ffffff;
+    display: block;
+    margin-bottom: 33px; /*espaçamento externo*/
+}
+
+/*ao passar o mouse no seletor*/
+.content-nav a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+
+.perfil{
+    margin-bottom: 65px;
+    width: 120px;
+    border-radius: 50%; / *deixa a imagem com um círculo*
+}
+
+.social{
+    display: flex;
+    column-gap: 16px;
+    margin-top: 65px;
+}
+
+.content{
+    /*padding-> espaçamento interno*/
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+/*
+    MEDIA QUERIES
+    São condicionais baseadas principalmente no tamanho das telas
+*/
+
+
+@media (max-width: 767px){
+
+    h1{
+        font-size: 36px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+
+    p{
+        font-size: 16px;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .content{
+        margin-top: 90px;
+    }
+
+    .nav{
+        width: 100%;
+        height: auto; /*altura automática (se ajusta ao conteúdo)*/
+        padding: 15px;
+        box-sizing: border-box; /*faz com que o padding não aumente a largura*/
+    }
+
+    .content-nav{
+        display: flex;      
+        flex-wrap: wrap; /*permite multiplas linhas*/
+        width: 100%;
+        justify-content: space-between; /*colocar o espaço vazio ENTRE os filhos*/
+    }
+    
+    .content-nav a{
+        margin-bottom: 0;
+    }   
+
+    .perfil{
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        order: 1;
+    }
+    .social{
+        margin-top: 10px;
+        order: 2;
+    }
+
+    .social img{
+        width: 20px;
+    }
+    
+    .menu{
+        order: 3;        
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+}
